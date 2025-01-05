@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             agent {
@@ -13,8 +12,7 @@ pipeline {
                 sh'''
                     ls -la
                     node --version
-                    npm --version
-                    npm install
+                    npm -v
                     npm ci
                     npm run build
                     ls -la
